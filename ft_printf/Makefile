@@ -1,27 +1,28 @@
-CC		= cc
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 NAME		= libftprintf.a
 SRCS		= ft_printf.c
-
 OBJS		= $(SRCS:.c=.o)
-RM		= rm -rf
-FLIB		= -rcs
+RM			= rm -rf
+FLIB		= ar -rcs
 .c.o:
-		$(CC) $(CFLAGS) -I . -c $< -o $(<:.c=.o) $@
+			$(CC) $(CFLAGS) -I . -c $< -o $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(CC) -o $(NAME) $(OBJS)
-		ar $(NAME)
+			cd libft/ && $(MAKE) && cp libft.a ../$(NAME)
+			$(FLIB) $(NAME) $(OBJ)
 
 
 clean:
-		$(RM) $(OBJS)
+			$(RM) $(OBJS)
+			cd libft/ && $(MAKE) clean
 
 fclean:		clean
-		$(RM) $(NAME)
+			$(RM) $(NAME)
+			cd libft/ && $(MAKE) fclean
 
-re:		fclean all
+re:			fclean all
 
 .PHONY:		all clean fclean re
