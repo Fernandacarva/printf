@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 15:36:21 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/06/22 15:37:54 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/05/11 18:26:21 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/05/17 20:24:10 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *base, ...)
+char	*ft_strdup(const char *s1)
 {
-	va_list	aux;
-	int		index;
-	int		sum;
+	size_t	len;
+	char	*aux1;
 
-	index = 0;
-	sum = 0;
-	va_start(aux, base);
-	while (base[index])
+	len = ft_strlen(s1) + 1;
+	aux1 = malloc(len);
+	if (aux1)
 	{
-		if (base[index] == '%' && ft_strchr("cspdiuxX%", base[index + 1]))
-		{
-			sum += ft_printf_first(base, index, aux);
-			index++;
-		}
-		else
-			ret += ft_putchar(base[index]);
-		index++;
+		ft_strlcpy(aux1, s1, len);
+		return (aux1);
 	}
-	va_end(base);
-	return (sum);
+	return (NULL);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	char	*teste;
+
+	teste = "outra frase";
+	printf("%15.p = %s \n", teste, teste);
+	printf("%15.p = %s \n", ft_strdup(teste),ft_strdup(teste));
+	return (0);
 }

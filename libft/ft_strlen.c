@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 18:26:21 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/05/17 17:49:54 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/05/05 11:41:11 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/05/07 13:59:33 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <unistd.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
 
-int	ft_printf(const char *base, ...);
-#endif
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
+}
+
+/*#include <stdio.h>
+
+int main()
+{
+	char a[20]= "Bom dia!!!";
+
+	printf("Length of string a = %zu \n", ft_strlen(a));
+}*/
