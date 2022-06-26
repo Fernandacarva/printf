@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_hex_upper.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 18:26:21 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/05/17 17:49:54 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/06/22 15:36:21 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/06/22 15:37:54 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "../libft/libft.h"
-# include <stdarg.h>
-# include <unistd.h>
+int ft_printf_hex_upper(va_list base)
+{
+    unsigned int    num;
 
-int	ft_printf(const char *base, ...);
-int ft_out_c(char c);
-int ft_out_d(char *s);
-#endif
+    num = va_args(base, unsigned int);
+    

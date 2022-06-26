@@ -15,21 +15,21 @@
 static int ft_printf_define(va_list aux, char n)
 {
      if (n == 'c')
-        return (out_c(aux));
+        return (ft_out_c(aux));
     if (n == 's')
-        return (out_s(aux));
+        return (ft_out_s(aux));
     if (n == 'p')
-        return (out_p(aux));
+        return (ft_out_p(aux));
     if (n == 'd')
-        return (out_d(aux));
+        return (ft_out_d(aux));
     if (n == 'i')
-        return (out_i(aux));
+        return (ft_out_i(aux));
     if (n == 'u')
-        return (out_u(aux));
+        return (ft_out_u(aux));
     if (n == 'x')
-        return (out_x(aux));
+        return (ft_out_x(aux));
     if (n == 'X')
-        return (out_X(aux));
+        return (ft_out_X(aux));
 }
 
 int	ft_printf(const char *base, ...)
