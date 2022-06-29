@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernanda <fernanda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:31:40 by fernanda          #+#    #+#             */
-/*   Updated: 2022/05/20 15:02:33 by fernanda         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:32:56 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,3 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
-
-
-/*int	main(void)
-{
-	char	*s; 
-	int		fd;
-
-	s = "Outra frase grande aqui.";
-	fd = 1;
-	ft_putendl_fd(s, fd);
-	
-	return (0);
-}*/

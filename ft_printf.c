@@ -14,22 +14,22 @@
 
 static int ft_printf_define(va_list aux, char n)
 {
-     if (n == 'c')
-        return (ft_out_c(aux));
+	if (n == '%')
+		return (ft_putchar_fd('%', 1));
+	if (n == 'c')
+        return (ft_out_c(va_arg(aux, int)));
     if (n == 's')
-        return (ft_out_s(aux));
+        return (ft_out_s(va_arg(aux, char *)));
     if (n == 'p')
-        return (ft_out_p(aux));
-    if (n == 'd')
-        return (ft_out_d(aux));
-    if (n == 'i')
-        return (ft_out_i(aux));
+        return (ft_out_p(va_arg(aux, unsigned long)));
+    if (n == 'd' || n == 'i')
+        return (ft_out_dec(va_ar(aux, int)));
     if (n == 'u')
-        return (ft_out_u(aux));
+        return (ft_out_u(va_arg(aux, unsigned int)));
     if (n == 'x')
-        return (ft_out_x(aux));
+        return (ft_out_x(va_arg(aux, unsigned int)));
     if (n == 'X')
-        return (ft_out_X(aux));
+        return (ft_out_X(va_arg(aux, unsigned int)));
 }
 
 int	ft_printf(const char *base, ...)

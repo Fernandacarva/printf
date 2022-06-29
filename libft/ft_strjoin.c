@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernanda <fernanda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:25:54 by fernanda          #+#    #+#             */
-/*   Updated: 2022/05/23 17:26:17 by fernanda         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:37:36 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,29 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		aux;
-	int		len1;
-	int		len2;
-	char	*str;
+	size_t			aux1;
+	size_t			aux2;
+	size_t			sum;
+	char			*str;
 
-	if (s1 || s2)
+	if (!s1 || !s2)
+		return (NULL);
+	sum = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = malloc(sum);
+	aux1 = 0;
+	aux2 = 0;
+	if (str == NULL)
+		return (NULL);
+	while (s1[aux1] != '\0')
 	{
-		len1 = ft_strlen(s1);
-		len2 = ft_strlen(s2);
-		str = (char *)malloc(sizeof(char) * (len1 + len2 +1));
-		if (str == NULL)
-			return (NULL);
-		aux = -1;
-		while (s1[++aux])
-			str[aux] = s1[aux];
-		aux = -1;
-		while (s2[++aux])
-		{
-			str[len1] = s2[aux];
-			len1++;
-		}
-		str[len1] = '\0';
-		return (str);
+		str[aux1] = s1[aux1];
+		aux1++;
 	}
-	return (NULL);
+	while (s2[aux2] != '\0')
+	{
+		str[aux1 + aux2] = s2[aux2];
+		aux2++;
+	}
+	str[aux1 + aux2] = '\0';
+	return (str);
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	char	*teste1;
-// 	char	*teste2;
-
-// 	teste1 = "Fernanda";
-// 	teste2 = "Carvalho";
-// 	printf("%s\n", ft_strjoin(teste1, teste2));
-// }

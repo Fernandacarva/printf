@@ -23,32 +23,23 @@ int ft_out_s(char *s)
     int len;
 
     if (!s)
-    {
-        write (1, "(null)", 6);
-        return (6);
-    }
+        return (write (1, "(null)", 6);
     len = ft_strlen(s);
     write (1, s, len);
     return (len);
 }
 
-int ft_out_d(va_list base)
+int ft_out_dec(va_list aux)
 {
     int num;
+	int	aux1;
 
-    num = va_args(base, int);
+	aux1 = ft_out_s;
+	
+    num = va_args(aux, int);
     ft_putnbr_fd(num, 1);
     if (num < 0)
-        return (0);
-}
-
-int ft_out_i(va_list base)
-{
-    int n;
-
-     n = va_args(base, int);
-    ft_putnbr_fd(num, 1);
-     if (n < 0)
-         return (0);
+	
+		return (0);
 }
 

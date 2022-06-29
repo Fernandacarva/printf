@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:18:03 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/05/17 18:15:42 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/06/06 16:55:56 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (aux1);
 }
-
-/*#include <stdlib.h>
-#include <stdio.h>
-int                main(void)
-{
-    int     src_size;
-    char     *src;
-    char     *dest;
-
-    src = calloc(11, sizeof(char));
-    dest = calloc(8, sizeof(char));
-    src = "galera";
-    src_size = ft_strlcpy(dest, src, 5);
-    printf("\n\nft_src: %s\n", src);
-    printf("ft_dest: %s\n", dest);
-    printf("ft_src_size: %d\n\n\n", src_size);
-    return(0);
-}*/

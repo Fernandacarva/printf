@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_printf_hex_upper(va_list base)
+int ft_printf_hex_upper(va_list aux)
 {
     unsigned int    num;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernanda <fernanda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 22:35:33 by fernanda          #+#    #+#             */
-/*   Updated: 2022/05/25 21:33:18 by fernanda         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:50:02 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ char	**ft_split(char const *s, char c)
 
 	sep = 0;
 	index = 0;
+	if (!s)
+		return (NULL);
 	while (s[index])
 	{
 		if (s[index] != c && (s[index + 1] == c || s[index + 1] == '\0'))
 			sep++;
 		index++;
 	}
-	count = (char **)malloc(sizeof(count) * (sep + 1));
+	count = (char **)malloc(sizeof(char *) * (sep + 1));
 	if (!count)
 		return (NULL);
 	ft_first(count, sep, s, c);
@@ -43,8 +45,8 @@ static char	**ft_first(char **count, int sep, char const *s, char c)
 
 	aux1 = 0;
 	aux2 = 0;
-	index = 0;
-	while (index < sep)
+	index = -1;
+	while (++index < sep)
 	{
 		aux1 = aux1 + aux2;
 		while (s[aux1] == c)
@@ -59,20 +61,7 @@ static char	**ft_first(char **count, int sep, char const *s, char c)
 				free(count[index--]);
 			return (NULL);
 		}
-		index++;
 	}
+	count[index] = NULL;
 	return (count);
 }
-
-// #include <stdio.h>
-
-// int    main(void)
-// {
-//     char    *teste1;
-//     char    c;
-
-//     c = ' ';
-//     teste1 = " Mi nha       c asa minha v ida    ";
-//     printf("(E)%p \n", ft_split(teste1, c));
-//     return (0);
-// }

@@ -3,32 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: fernanda <fernanda@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 17:44:29 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/05/23 15:53:50 by fernanda         ###   ########.fr       */
-=======
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:44:29 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/05/06 19:21:20 by ferncarv         ###   ########.fr       */
->>>>>>> 9d13ff6b5cc2f757beebd4c03ab730842e14eedd
+/*   Updated: 2022/05/30 17:31:42 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	cont;
+	size_t	count;
 
-	cont = 0;
-	while ((s1[cont] || s2[cont]) && cont < n)
+	count = 0;
+	while ((s1[count] != '\0' && s2[count]) != '\0' && count < n)
 	{
-		if (s1[cont] != s2[cont])
-			return (s1[cont] - s2[cont]);
-		cont++;
+		if (s1[count] != s2[count])
+			return ((unsigned char) s1[count] - ((unsigned char) s2[count]));
+		count++;
 	}
-	return (0);
+	if (count == n)
+		return (0);
+	return ((unsigned char) s1[count] - ((unsigned char) s2[count]));
 }

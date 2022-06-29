@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernanda <fernanda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 09:18:25 by fernanda          #+#    #+#             */
-/*   Updated: 2022/05/25 20:44:11 by fernanda         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:42:01 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	size_t	count;
 	size_t	s_len;
-	
+
 	s_len = 0;
-	substr = malloc(sizeof(char) * (len + 1));
+	substr = (char *)malloc(sizeof(*substr) * (len + 1));
 	if (!substr || !s)
 		return (NULL);
 	count = 0;
@@ -32,23 +32,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		}
 		count++;
 	}
-	substr[s_len] = '\0';	
-	
+	substr[s_len] = '\0';
 	return (substr);
 }
-
-
-/*#include <stdio.h>
-
-int main(void)
-{
-	char	teste[] = "Amora";
-	unsigned int	aux;
-	size_t	tam;
-	
-	aux = 0;
-	tam = 6;
-	printf("%s\n", ft_substr(teste, aux, tam));
-		
-	return (0);
-}*/

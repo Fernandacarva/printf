@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:53:44 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/05/17 18:04:39 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:54:19 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	aux2 = (unsigned char *) s2;
 	while (n--)
 	{
-		if (*aux1++ != *aux2++)
+		if (*aux1 != *aux2)
 			return (*aux1 - *aux2);
+		aux1++;
+		aux2++;
 	}
 	return (0);
 }

@@ -1,27 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_printf_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 15:55:06 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/06/09 11:54:05 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/06/22 15:36:21 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/06/22 15:37:54 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+#include "printf.h"
 {
-	unsigned char	*aux1;
-
-	aux1 = (unsigned char *) s;
-	while (n-- > 0)
-	{
-		if (*aux1 == (unsigned char) c)
-			return (aux1);
-		aux1++;
-	}
-	return (NULL);
-}
+	

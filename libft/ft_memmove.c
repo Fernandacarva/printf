@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:40:26 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/05/17 18:05:45 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:40:08 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (aux1 > aux2)
 		while (len-- > 0)
 			aux1[len] = aux2[len];
-	else
+	if (aux1 < aux2)
 	{
 		while (suport < len)
 		{
@@ -34,17 +34,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-
-int main () {
-   char dest[] = "antes de mudar";
-   const char src[]  = "coisas a";
-
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
-   memmove(dest, src, 15);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
-
-   return(0);
-}*/
