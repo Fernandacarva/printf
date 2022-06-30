@@ -1,15 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_p.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 15:36:21 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/06/22 15:37:54 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/06/30 02:30:40 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/06/30 02:30:45 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
+
+int	ft_putnbr_p(unsigned long n, char *base)
 {
-	
+	int				len;
+	char			*s;
+	unsigned long	nbr;
+
+	nbr = (unsigned long) n;
+	s = ft_itoa_hex(n, base);
+	len = ft_putstr_fd(s, 1);
+	free(s);
+	return (len);
+}

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_hex_upper.c                              :+:      :+:    :+:   */
+/*   ft_putnbr_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 15:36:21 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/06/22 15:37:54 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/06/30 01:59:36 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/06/30 02:29:13 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int ft_printf_hex_upper(va_list aux)
+int	ft_putnbr_x(unsigned int n, char *base)
 {
-    unsigned int    num;
+	int		len;
+	char	*s;
 
-    num = va_args(base, unsigned int);
-    
+	s = ft_itoa_hex(n, base);
+	len = ft_putstr_fd(s, 1);
+	free(s);
+	return (len);
+}

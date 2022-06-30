@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:11:10 by fernanda          #+#    #+#             */
-/*   Updated: 2022/06/30 02:51:49 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/06/30 02:55:53 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static size_t	n_len(int n)
+static size_t	n_len(unsigned int n)
 {
 	size_t	count;
 
@@ -27,7 +28,7 @@ static size_t	n_len(int n)
 	return (count);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_u(unsigned int n)
 {
 	int		len;
 	char	*str;

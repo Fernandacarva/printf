@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:11:10 by fernanda          #+#    #+#             */
-/*   Updated: 2022/06/30 02:51:49 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/06/30 02:53:54 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	n_len(int n)
+static size_t	n_len(unsigned long n)
 {
 	size_t	count;
 
@@ -21,13 +21,13 @@ static size_t	n_len(int n)
 		count++;
 	while (n)
 	{
-		n = (n / 10);
+		n = (n / 16);
 		count++;
 	}
 	return (count);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_hex(unsigned long n, char *base)
 {
 	int		len;
 	char	*str;
@@ -42,13 +42,13 @@ char	*ft_itoa(int n)
 	if (n < 0)
 	{
 		str[0] = '-';
-		str[len--] = 48 - (n % 10);
-		n = (n / 10) * (-1);
+		str[len--] = base[n % 16];
+		n = (n / 16) * (-1);
 	}
 	while (n)
 	{
-		str[len--] = 48 + (n % 10);
-		n = (n / 10);
+		str[len--] = base[n % 16];
+		n = (n / 16);
 	}
 	return (str);
 }

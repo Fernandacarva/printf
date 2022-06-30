@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:06:32 by fernanda          #+#    #+#             */
-/*   Updated: 2022/06/15 14:20:45 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/06/30 02:31:47 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,14 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+int		ft_putnbr_fd(int n);
+int		ft_putnbr_u(unsigned int n);
+char	*ft_itoa_u(unsigned int n);
+char	*ft_itoa_hex(unsigned long n, char *base);
+int		ft_putnbr_x(unsigned int n, char *base);
+int		ft_putnbr_p(unsigned long n, char *base);
+
 #endif
