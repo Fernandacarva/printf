@@ -1,6 +1,5 @@
 <h1 align="center">  
-	printf ✔️
-</h1>
+	printf ✅</h1>
 
 <p align="center">
 	<b><i>Reproduzir fielmente o printf 🖨️</i></b><br>
